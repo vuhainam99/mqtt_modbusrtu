@@ -1,0 +1,11 @@
+{
+   "server":{
+      "uri":"tcp://10.1.3.6:1883",
+      "user":"user",
+      "pass":"pass"
+   },
+   "device":{
+      "id":"1122",
+      "name":"rtu1"
+   }
+}

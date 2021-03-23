@@ -1,0 +1,14 @@
+[
+    {
+        "name":"D01",
+        "add":1,
+        "funcode":1,
+        "size":1
+    },
+    {
+        "name":"DI1",
+        "add":1,
+        "funcode":2,
+        "size":1
+    }
+]

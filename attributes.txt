@@ -1,0 +1,16 @@
+{
+   "attributes":[
+      {
+         "name":"D01",
+         "id":"cnt_gate/sensor_lux_01",
+         "label":"Humi Sensor",
+	 "type":"Integer"
+      },
+      {
+         "name":"DI1",
+         "id":"cnt_gate/sensor_lux_02",
+         "label":"Light 1",
+	 "type":"Integer"
+      }
+   ]
+}
