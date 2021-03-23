@@ -11,6 +11,7 @@ json1 = json.loads(data)
 device_id = json1['device']['id']
 mqtt_sub_topic = ["/d/resp/s/{0}/REG".format(device_id),"/d/req/s/c/LIST","/d/req/s/{0}/SET".format(device_id),"/d/req/s/{0}/GET".format(device_id),"/d/req/s/{0}/NOTIFY".format(device_id)]
 
+data_att = open("/Users/vuhainam/Desktop/attributes.txt", "r").read()
 
 
 client=mqtt.Client()
@@ -55,8 +56,8 @@ def thread_process_message(message):
             if data['status'] == 1 :
                 a = 1
         elif message.topic == "/d/req/s/c/LIST":
+            global data_att
             topic_1 = "/d/resp/{0}/s/LIST".format(device_id)
-            data_att = open("/Users/vuhainam/Desktop/attributes.txt", "r").read()
             json_att = json.loads(data_att)
             payload_1 = json_att
             client.publish(str(topic_1),str(payload_1))
@@ -95,10 +96,10 @@ def init_mqtt(client,mqtt_host,mqtt_port,mqtt_uid,mqtt_password):
 
 def handler1(): 
     global a
+    global data_att
     topic_reg = "/d/req/{0}/s/REG".format(device_id)
     topic_noti = "/d/req/{0}/s/NOTIFY".format(device_id)
-    data = open("/Users/vuhainam/Desktop/attributes.txt", "r").read()
-    json1 = json.loads(data)
+    json1 = json.loads(data_att)
     payload = json1
     while True:
         if(a == 0):
